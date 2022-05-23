@@ -1,0 +1,25 @@
+.forecast-container{
+    display:flex;
+    justify-content: space-around;
+    padding: 0;
+    width: 85%; 
+    margin: auto;
+    box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.25);
+    border-radius: var(--secondary-border-radius);
+    background-color: var(--bg-color--card);
+}
+
+.forecast-day{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding:20px;
+}
+
+.forecast-day:hover{
+    background: rgba(255, 255, 255, 0.584);
+    color: #222831;
+    border-radius: 48%;
+    box-shadow: 0 0 40px -5px rgba(0, 0, 0, 0.2);
+}

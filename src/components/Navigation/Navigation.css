@@ -1,0 +1,15 @@
+.navigation-container {
+    display: flex;
+    border: 1px solid white;
+    padding: 1.5rem;
+    font-weight: 900;
+    font-size: 1.5rem;
+    width: 100%;
+}
+
+.nav-link {
+    margin: 10px;
+    color: white;
+    display: flex;
+    font-weight: 100;
+}

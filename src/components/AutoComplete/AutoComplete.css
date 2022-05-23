@@ -1,0 +1,64 @@
+.auto-complete-form
+{
+    text-align: center;
+    position: relative;
+    display: table;
+    margin: 4rem auto 3rem;
+}
+
+.auto-complete-loader
+{
+    position: absolute;
+    height: 1.2em;
+    width: 1.2em;
+    border-radius: 100%;
+    border: 2px solid #FFF;
+    border-top-color: transparent !important;
+    top: 50%;
+    margin-top: -.6em;
+    right: 15px;
+    animation: .3s spin linear infinite;
+}
+
+.auto-complete-input
+{
+    font-family: inherit;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    background-color: rgba( 0,0,0,.3 );
+    box-shadow: 0 0 10px 0 rgba( 0,0,0,.3 );
+    color: #FFF;
+    border: none;
+    outline: none;
+    border-radius: 100rem;
+    transition: .3s all;
+}
+
+.auto-complete-suggestions
+{
+    position: absolute;
+    width: 90%;
+    left: 5%;
+    margin-top: -2px;
+    border-radius: 0 0 1rem 1rem;
+    overflow: hidden;
+    background-color: rgba( 0,0,0,.5 );
+    color: #FFF;
+    z-index: 999;
+    transition: .3s all;
+}
+
+.auto-complete-suggestions ul
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: left;
+}
+
+.auto-complete-suggestions ul li
+{
+    cursor: pointer;
+    padding: 1rem;
+    transition: .3s all;
+}

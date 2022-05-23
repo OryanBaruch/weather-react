@@ -1,25 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+// @ts-nocheck
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { compose } from "redux";
+import { withRouter, withStore, withToasts } from "./HoC";
+import useGeoLocation from "./hooks/useGeoLocation";
+import { apiCurrentWeather, apiForecast } from "./Redux/middleware/api";
+import {Home} from './pages/'
+import {Favorites} from "./pages"
+import {Navigation} from "./components/Navigation"
+import {
+  setCurrentWeatherLoading,
+  setForecastLoading,
+} from "./Redux/weather/actions";
+import { Routes, Route } from "react-router-dom";
 
-function App() {
+const App = () => {
+  const dispatch = useDispatch();
+  const [location] = useGeoLocation();
+
+  // fetch default location data on load
+  useEffect(() => {
+    if (Object.keys(location).length === 0) return;
+
+    dispatch(setCurrentWeatherLoading(true));
+    dispatch(setForecastLoading(true));
+
+    dispatch(apiCurrentWeather(location));
+    dispatch(apiForecast(location));
+
+    // eslint-disable-next-line
+  }, [location]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {/* <Header /> */}
+      <Navigation/>
+      <Routes>
+        <>
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/favorites" element={<Favorites />} />
+        </>
+      </Routes>
     </div>
   );
-}
+};
 
-export default App;
+export default compose(withStore, withRouter, withToasts)(App);

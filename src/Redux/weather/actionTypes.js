@@ -1,0 +1,8 @@
+const ACTIONS = {
+    SET_CURRENT: 'weather/SET_CURRENT',
+    SET_FORECAST: 'weather/SET_FORECAST',
+    SET_CURRENT_LOADING: 'weather/SET_CURRENT_LOADING',
+    SET_FORECAST_LOADING: 'weather/SET_FORECAST_LOADING'
+};
+
+export default ACTIONS;

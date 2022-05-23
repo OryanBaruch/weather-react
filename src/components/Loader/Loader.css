@@ -1,0 +1,18 @@
+.loader
+{
+    height: 1em;
+    width: 1em;
+    border: 3px solid #FFF;
+    border-top-color: transparent !important;
+    border-radius: 100%;
+    animation: .3s spin linear infinite;
+}
+
+
+/*
+    Light Theme
+*/
+.light-theme .loader
+{
+    border-color: #333;
+}
